@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://d3js.org/d3.v3.min.js"></script>
+  <script src="https://d3js.org/d3.geodesic.v0.min.js"></script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script src="https://kit.fontawesome.com/59ecaaffaa.js" crossorigin="anonymous"></script>
+  <title>Document</title>
+</head>
+
+<body class="">
+  <nav class="fixed top-0 left-0 w-full py-6">
+    <div class="container mx-auto flex justify-between">
+      <img src="./webim/package.png" class="h-8 animate-bounce" />
+
+      <i class="fa-solid fa-square-phone fa-2x text-white"></i>
+    <h1 class="text-4xl font-bold text-blue-500">BAPTISPHERE</h1>
+    <div class="flex justify-end">
+      <i class="fa-brands fa-instagram fa-2x text-white mx-2"></i>
+      <i class="fa-brands fa-square-facebook fa-2x text-white mx-2"></i>
+    </div>
+      <div class="flex items-center">
+        <div class="space-x-10 flex">
+          <div class="relative" x-data="{ open: false }">
+            <button @click="open = ! open" type="button" aria-expanded="false">
+              <div class="space-y-2">
+                <span class="block w-8 h-0.5 bg-white"></span>
+                <span class="block w-8 h-0.5 bg-white"></span>
+                <span class="block w-8 h-0.5 bg-white"></span>
+              </div>
+
+              <svg :class="{'rotate-180 duration-300': open, 'duration-300' : !open}"
+                class="text-gray-400 ml-2 h-5 w-5 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+
+              </svg>
+            </button>
+
+            <div x-show="open" x-transition:enter="transition ease-out duration-200"
+              x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100"
+              x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100 scale-100"
+              x-transition:leave-end="opacity-0 scale-90"
+              class="absolute left-1/2 z-full mt-3 w-screen max-w-md -translate-x-1/2 transform px-2 sm:px-0">
+
+              <div class="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
+                <div class="relative grid gap-6 bg-white px-5 py-6 z-50">
+                  <a href="#" class="-m-3 flex items-start rounded-lg p-3 hover:bg-gray-100">
+
+                    <svg class="h-6 w-6 flex-shrink-0 text-template-secondary" xmlns="http://www.w3.org/2000/svg"
+                      fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                      <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M8.25 21v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21m0 0h4.5V3.545M12.75 21h7.5V10.75M2.25 21h1.5m18 0h-18M2.25 9l4.5-1.636M18.75 3l-1.5.545m0 6.205l3 1m1.5.5l-1.5-.5M6.75 7.364V3h-3v18m3-13.636l10.5-3.819" />
+                    </svg>
+
+                    <div class="ml-4">
+                      <p class="text-base font-medium text-gray-900">Qui somme nous?</p>
+                    </div>
+                  </a>
+
+                  <a href="#" class="-m-3 flex items-start rounded-lg p-3 hover:bg-gray-100">
+                    <svg class="h-6 w-6 flex-shrink-0 text-template-secondary" xmlns="http://www.w3.org/2000/svg"
+                      fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M16.5 3.75V16.5L12 14.25 7.5 16.5V3.75m9 0H18A2.25 2.25 0 0120.25 6v12A2.25 2.25 0 0118 20.25H6A2.25 2.25 0 013.75 18V6A2.25 2.25 0 016 3.75h1.5m9 0h-9" />
+                    </svg>
+                    <div class="ml-4">
+                      <p class="text-base font-medium text-gray-900">Notre vision</p>
+                    </div>
+                  </a>
+
+                  <a href="#" class="-m-3 flex items-start rounded-lg p-3 hover:bg-gray-100">
+                    <svg class="h-6 w-6 flex-shrink-0 text-template-secondary" xmlns="http://www.w3.org/2000/svg"
+                      fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                      <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                    </svg>
+
+                    <div class="ml-4">
+                      <p class="text-base font-medium text-gray-900">Espace pro</p>
+                    </div>
+                  </a>
+
+                  <a href="#" class="-m-3 flex items-start rounded-lg p-3 hover:bg-gray-100">
+                    <svg class="h-6 w-6 flex-shrink-0 text-template-secondary" xmlns="http://www.w3.org/2000/svg"
+                      fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                      <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                    </svg>
+
+                    <div class="ml-4">
+                      <p class="text-base font-medium text-gray-900">Conception</p>
+                    </div>
+                  </a>
+
+                  <a href="#" class="-m-3 flex items-start rounded-lg p-3 hover:bg-gray-100">
+                    <svg class="h-6 w-6 flex-shrink-0 text-template-secondary" xmlns="http://www.w3.org/2000/svg"
+                      fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                      <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                    </svg>
+
+                    <div class="ml-4">
+                      <p class="text-base font-medium text-gray-900">Travaux sur mesure</p>
+                    </div>
+                  </a>
+
+                  <a href="#" class="-m-3 flex items-start rounded-lg p-3 hover:bg-gray-100">
+                    <svg class="h-6 w-6 flex-shrink-0 text-template-secondary" xmlns="http://www.w3.org/2000/svg"
+                      fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                      <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                    </svg>
+
+                    <div class="ml-4">
+                      <p class="text-base font-medium text-gray-900">Ti'cocon</p>
+                    </div>
+                  </a>
+
+                  <a href="#" class="-m-3 flex items-start rounded-lg p-3 hover:bg-gray-100">
+                    <svg class="h-6 w-6 flex-shrink-0 text-template-secondary" xmlns="http://www.w3.org/2000/svg"
+                      fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                      <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                    </svg>
+
+                    <div class="ml-4">
+                      <p class="text-base font-medium text-gray-900">Ti,jardin</p>
+                    </div>
+                  </a>
+
+                  <a href="#" class="-m-3 flex items-start rounded-lg p-3 hover:bg-gray-100">
+                    <svg class="h-6 w-6 flex-shrink-0 text-template-secondary" xmlns="http://www.w3.org/2000/svg"
+                      fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                      <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                    </svg>
+
+                    <div class="ml-4">
+                      <p class="text-base font-medium text-gray-900">Nous contacter</p>
+                    </div>
+                  </a>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </nav>
+
+  <section class="bg-[#23304c] h-screen flex px-[10%] py-[6%]">
+    <img src="./webim/Ellipse.png" class="z-20 animate-ping w-6 absolute left-24 top-56" />
+    <img src="./webim/Ellipse.png" class="z-20 animate-ping w-6 absolute right-96 top-36" />
+    <img src="./webim/Ellipse.png" class="z-20 animate-ping w-6 absolute left-64 bottom-24" />
+    <img src="./webim/Ellipse.png" class="z-20 animate-ping w-6 absolute right-40 top-64" />
+  </section>
+  <div class="flex justify-center">
+    <sphere id="sphere" class="fixed -bottom-96 z-10 pl-10"></sphere>
+    <img src="ball.png" class="fixed -bottom-64 w-[600px] sun">
+
+  </div>
+
+</body>
+<script>
+  var width = 1000,
+    height = 1000;
+
+
+  var projection = d3.geo.orthographic().scale(height / 3).center([0, 90]);;
+  var canvas = d3.select("#sphere").append("canvas")
+    .attr("width", width)
+    .attr("height", height);
+  var context = canvas.node().getContext("2d");
+  context.strokeStyle = "#1E40AF";
+  context.lineWidth = 4;
+
+  geodesic(2);
+
+  function redraw() {
+    context.clearRect(0, 0, width, height);
+
+    faces.forEach(function (d) {
+      d.polygon[0] = projection(d[0]);
+      d.polygon[1] = projection(d[1]);
+      d.polygon[2] = projection(d[2]);
+      if (d.visible = d.polygon.area() > 0) {
+      }
+    });
+
+    context.beginPath();
+    faces.forEach(function (d) {
+      drawTriangle(d.polygon);
+    });
+    context.stroke();
+  }
+
+  function drawTriangle(triangle) {
+    context.moveTo(triangle[0][0], triangle[0][1]);
+    context.lineTo(triangle[1][0], triangle[1][1]);
+    context.lineTo(triangle[2][0], triangle[2][1]);
+    context.closePath();
+  }
+
+  function geodesic(n) {
+    projection.center([0, 90]);
+    faces = d3.geodesic.polygons(n).map(function (d) {
+      d = d.coordinates[0];
+      d.polygon = d3.geom.polygon(d.map(projection));
+      return d;
+    });
+
+    redraw();
+  }
+</script>
+<style>
+  .sun {
+    /*animation info for different browsers*/
+    -webkit-animation:
+      /*type of animation*/
+      spin
+      /*length of animation*/
+      120s
+      /*same speed from start to end*/
+      linear
+      /*continue forever!*/
+      infinite;
+    -moz-animation: spin 120s linear infinite;
+    animation: spin 120s linear infinite;
+  }
+
+  @-moz-keyframes spin {
+    100% {
+      -moz-transform: rotate(360deg);
+    }
+  }
+
+  @-webkit-keyframes spin {
+    100% {
+      -webkit-transform: rotate(360deg);
+    }
+  }
+
+  @keyframes spin {
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+</style>
+
+</html>

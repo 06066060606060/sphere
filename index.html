@@ -36,7 +36,7 @@
               </svg>
             </button>
 
-            <div x-show="open" x-transition:enter="transition ease-out duration-200"
+            <div x-show="open" x-transition:enter="transition ease-out duration-200" x-cloak
               x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100"
               x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100 scale-100"
               x-transition:leave-end="opacity-0 scale-90"
@@ -128,7 +128,7 @@
     <button class="absolute bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full bottom-[50%]">test</button>
     <button class="absolute bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full bottom-[42%] left-[35%]">test</button>
     <button class="absolute bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full bottom-[42%] right-[35%]">test</button>
-    <sphere id="sphere" class="fixed md:-bottom-80 -bottom-[400px] z-10 pl-10"></sphere>
+     <img src="/webim/B_grille.png" class="fixed md:-bottom-48 -bottom-52 w-[600px] z-20">
     <img src="/webim/ball.png" class="fixed md:-bottom-48 -bottom-52 w-[600px] sun">
   </div>
 
@@ -156,57 +156,6 @@ document.addEventListener('click', (event) => {
   }
 });
 
-
-
-  var width = 1000,
-    height = 1000;
-
-
-  var projection = d3.geo.orthographic().scale(height / 3).center([0, 90]);;
-  var canvas = d3.select("#sphere").append("canvas")
-    .attr("width", width)
-    .attr("height", height);
-  var context = canvas.node().getContext("2d");
-  context.strokeStyle = "#1616AE";
-  context.lineWidth = 4;
-
-  geodesic(2);
-
-  function redraw() {
-    context.clearRect(0, 0, width, height);
-
-    faces.forEach(function (d) {
-      d.polygon[0] = projection(d[0]);
-      d.polygon[1] = projection(d[1]);
-      d.polygon[2] = projection(d[2]);
-      if (d.visible = d.polygon.area() > 0) {
-      }
-    });
-
-    context.beginPath();
-    faces.forEach(function (d) {
-      drawTriangle(d.polygon);
-    });
-    context.stroke();
-  }
-
-  function drawTriangle(triangle) {
-    context.moveTo(triangle[0][0], triangle[0][1]);
-    context.lineTo(triangle[1][0], triangle[1][1]);
-    context.lineTo(triangle[2][0], triangle[2][1]);
-    context.closePath();
-  }
-
-  function geodesic(n) {
-    projection.center([0, 90]);
-    faces = d3.geodesic.polygons(n).map(function (d) {
-      d = d.coordinates[0];
-      d.polygon = d3.geom.polygon(d.map(projection));
-      return d;
-    });
-
-    redraw();
-  }
 </script>
 <style>
 
@@ -217,7 +166,9 @@ body {
   background-position: center center;
 }
 
-
+ [x-cloak] { 
+      display: none !important;
+   }
 
   .sun {
     /*animation info for different browsers*/

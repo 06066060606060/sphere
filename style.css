@@ -10,6 +10,15 @@ body {
         display: none !important;
      }
   
+
+     .header{
+        background: #103BBD;
+background: linear-gradient(to right, #103BBD 0%, #0095FF 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+
+     }
+     
     .sun {
       /*animation info for different browsers*/
       -webkit-animation:

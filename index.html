@@ -15,152 +15,160 @@
 </head>
 
 <body class="bg-image-[webim/bg.jpg] bg-cover bg-center h-screen bg-[#23304c]">
-  <div class ="bg-[#23304c] bg-opacity-90 h-screen ">
-  <nav class="fixed top-0 w-full py-6 px-8 z-50">
-    <div class="container mx-auto flex justify-between">
-      <img src="./webim/package.png" class="h-8 animate-bounce" />
+  <div class="bg-[#23304c] bg-opacity-90 h-screen ">
+    <nav class="fixed top-0 w-full py-6 px-8 z-50">
+      <div class="container mx-auto flex justify-between">
+        <img src="./webim/package.png" class="h-8 animate-bounce" />
 
-      <div class="flex items-center">
-        <div class="space-x-10 flex">
-          <div class="relative" x-data="{ open: false }">
-            <button @click="open = ! open" type="button" aria-expanded="false">
-              <div class="space-y-2">
-                <span class="block w-8 h-0.5 bg-white"></span>
-                <span class="block w-8 h-0.5 bg-white"></span>
-                <span class="block w-8 h-0.5 bg-white"></span>
-              </div>
-
-              <svg :class="{'rotate-180 duration-300': open, 'duration-300' : !open}"
-                class="text-gray-400 ml-2 h-5 w-5 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-
-              </svg>
-            </button>
-
-            <div x-cloak x-show="open" x-transition:enter="transition ease-out duration-200"
-              x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100"
-              x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100 scale-100"
-              x-transition:leave-end="opacity-0 scale-90"
-              @click.away="open = false" 
-              class="absolute left-1/2 z-full mt-3 w-screen max-w-md -translate-x-1/2 transform px-2 sm:px-0"  x-ref="menu">
-
-              <div class="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
-                <div class="relative grid gap-6 bg-white px-5 py-6 z-50">
-                  <a href="#" class="-m-3 flex items-start rounded-lg p-3 hover:bg-blue-300">
-                    <i class="fa-solid fa-people-group mt-1"></i>
-                    <div class="ml-4">
-                      <p class="text-base font-medium text-gray-900">Qui somme nous?</p>
-                    </div>
-                  </a>
-
-                  <a href="#" class="-m-3 flex items-start rounded-lg p-3 hover:bg-blue-300">
-                    <i class="fa-solid fa-eye pt-1"></i>
-                    <div class="ml-4">
-                      <p class="text-base font-medium text-gray-900">Notre vision</p>
-                    </div>
-                  </a>
-
-                  <a href="#" class="-m-3 flex items-start rounded-lg p-3 hover:bg-blue-300">
-                    <i class="fa-solid fa-user-tie pt-1"></i>
-                    <div class="ml-4">
-                      <p class="text-base font-medium text-gray-900">Espace pro</p>
-                    </div>
-                  </a>
-
-                  <a href="#" class="-m-3 flex items-start rounded-lg p-3 hover:bg-blue-300">
-                    <i class="fa-solid fa-briefcase pt-1"></i>
-                    <div class="ml-4">
-                      <p class="text-base font-medium text-gray-900">Conception</p>
-                    </div>
-                  </a>
-
-                  <a href="#" class="-m-3 flex items-start rounded-lg p-3 hover:bg-blue-300">
-                    <i class="fa-solid fa-helmet-safety pt-1"></i>
-                    <div class="ml-4">
-                      <p class="text-base font-medium text-gray-900">Travaux sur mesure</p>
-                    </div>
-                  </a>
-
-                  <a href="#" class="-m-3 flex items-start rounded-lg p-3 hover:bg-blue-300">
-                    <i class="fa-solid fa-house pt-1"></i>
-                    <div class="ml-4">
-                      <p class="text-base font-medium text-gray-900">Ti'cocon</p>
-                    </div>
-                  </a>
-
-                  <a href="#" class="-m-3 flex items-start rounded-lg p-3 hover:bg-blue-300">
-                    <i class="fa-sharp fa-solid fa-tree pt-1 pl-0.5"></i>
-                    <div class="ml-4">
-                      <p class="text-base font-medium text-gray-900">Ti'jardin</p>
-                    </div>
-                  </a>
-
-                  <a href="#" class="-m-3 flex items-start rounded-lg p-3 hover:bg-blue-300">
-                    <i class="fa-solid fa-address-book pt-1"></i>
-                    <div class="ml-4">
-                      <p class="text-base font-medium text-gray-900">Nous contacter</p>
-                    </div>
-                  </a>
+        <div class="flex items-center">
+          <div class="space-x-10 flex">
+            <div class="relative" x-data="{ open: false }">
+              <button @click="open = ! open" type="button" aria-expanded="false">
+                <div class="space-y-2">
+                  <span class="block w-8 h-0.5 bg-white"></span>
+                  <span class="block w-8 h-0.5 bg-white"></span>
+                  <span class="block w-8 h-0.5 bg-white"></span>
                 </div>
 
+                <svg :class="{'rotate-180 duration-300': open, 'duration-300' : !open}"
+                  class="text-gray-400 ml-2 h-5 w-5 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+
+                </svg>
+              </button>
+
+              <div x-cloak x-show="open" x-transition:enter="transition ease-out duration-200"
+                x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100"
+                x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100 scale-100"
+                x-transition:leave-end="opacity-0 scale-90" @click.away="open = false"
+                class="absolute left-1/2 z-full mt-3 w-screen max-w-md -translate-x-1/2 transform px-2 sm:px-0"
+                x-ref="menu">
+
+                <div class="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
+                  <div class="relative grid gap-6 bg-white px-5 py-6 z-50">
+                    <a href="#" class="-m-3 flex items-start rounded-lg p-3 hover:bg-blue-300">
+                      <i class="fa-solid fa-people-group mt-1"></i>
+                      <div class="ml-4">
+                        <p class="text-base font-medium text-gray-900">Qui somme nous?</p>
+                      </div>
+                    </a>
+
+                    <a href="#" class="-m-3 flex items-start rounded-lg p-3 hover:bg-blue-300">
+                      <i class="fa-solid fa-eye pt-1"></i>
+                      <div class="ml-4">
+                        <p class="text-base font-medium text-gray-900">Notre vision</p>
+                      </div>
+                    </a>
+
+                    <a href="#" class="-m-3 flex items-start rounded-lg p-3 hover:bg-blue-300">
+                      <i class="fa-solid fa-user-tie pt-1"></i>
+                      <div class="ml-4">
+                        <p class="text-base font-medium text-gray-900">Espace pro</p>
+                      </div>
+                    </a>
+
+                    <a href="#" class="-m-3 flex items-start rounded-lg p-3 hover:bg-blue-300">
+                      <i class="fa-solid fa-briefcase pt-1"></i>
+                      <div class="ml-4">
+                        <p class="text-base font-medium text-gray-900">Conception</p>
+                      </div>
+                    </a>
+
+                    <a href="#" class="-m-3 flex items-start rounded-lg p-3 hover:bg-blue-300">
+                      <i class="fa-solid fa-helmet-safety pt-1"></i>
+                      <div class="ml-4">
+                        <p class="text-base font-medium text-gray-900">Travaux sur mesure</p>
+                      </div>
+                    </a>
+
+                    <a href="#" class="-m-3 flex items-start rounded-lg p-3 hover:bg-blue-300">
+                      <i class="fa-solid fa-house pt-1"></i>
+                      <div class="ml-4">
+                        <p class="text-base font-medium text-gray-900">Ti'cocon</p>
+                      </div>
+                    </a>
+
+                    <a href="#" class="-m-3 flex items-start rounded-lg p-3 hover:bg-blue-300">
+                      <i class="fa-sharp fa-solid fa-tree pt-1 pl-0.5"></i>
+                      <div class="ml-4">
+                        <p class="text-base font-medium text-gray-900">Ti'jardin</p>
+                      </div>
+                    </a>
+
+                    <a href="#" class="-m-3 flex items-start rounded-lg p-3 hover:bg-blue-300">
+                      <i class="fa-solid fa-address-book pt-1"></i>
+                      <div class="ml-4">
+                        <p class="text-base font-medium text-gray-900">Nous contacter</p>
+                      </div>
+                    </a>
+                  </div>
+
+                </div>
               </div>
             </div>
           </div>
         </div>
+
       </div>
+    </nav>
 
-    </div>
-  </nav>
-
-  <section class="flex">
- <h1 class="header lg:text-6xl text-4xl font-bold text-blue-500 mx-auto pt-24">BAPTISPHÈRE</h1>
-    <!-- <div class="">
+    <section class="flex">
+      <h1 class="header lg:text-6xl text-4xl font-bold text-blue-500 mx-auto pt-24">BAPTISPHÈRE</h1>
+      <!-- <div class="">
       <i class="fa-solid fa-square-phone fa-2x text-white absolute top-48 left-1/2 transform -translate-x-1/2"></i>
         <i class="fa-brands fa-instagram fa-2x text-white absolute top-72 right-[20%] transform -translate-x-1/2"></i>
         <i class="fa-brands fa-square-facebook fa-2x text-white absolute top-72 left-[20%] transform -translate-x-1/2"></i>
     </div> -->
-    <img src="./webim/Ellipse.png" class="z-20 animate-[ping_3s_ease-in-out_infinite] w-6 absolute left-24 top-56 select-none" />
-    <img src="./webim/Ellipse.png" class="z-20 animate-[ping_3s_ease-in-out_infinite] w-6 absolute right-96 top-32 select-none" />
-    <img src="./webim/Ellipse.png" class="z-20 animate-[ping_3s_ease-in-out_infinite] w-6 absolute left-64 bottom-24 select-none" />
-    <img src="./webim/Ellipse.png" class="z-20 animate-[ping_3s_ease-in-out_infinite] w-6 absolute right-40 top-64 select-none" />
-  </section>
+      <img src="./webim/Ellipse.png"
+        class="z-20 animate-[ping_3s_ease-in-out_infinite] w-6 absolute left-24 top-56 select-none" />
+      <img src="./webim/Ellipse.png"
+        class="z-20 animate-[ping_3s_ease-in-out_infinite] w-6 absolute right-96 top-32 select-none" />
+      <img src="./webim/Ellipse.png"
+        class="z-20 animate-[ping_3s_ease-in-out_infinite] w-6 absolute left-64 bottom-24 select-none" />
+      <img src="./webim/Ellipse.png"
+        class="z-20 animate-[ping_3s_ease-in-out_infinite] w-6 absolute right-40 top-64 select-none" />
+    </section>
 
-  <div class="flex justify-center">
-    <div class="fixed md:-bottom-48 -bottom-52 w-[700px] z-20">
-      <button class="relative bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full left-[59%] top-[3px]">test</button>
-      <button class="relative bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full left-[115px] top-[13px]">test2</button>
-      <button class="relative bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full right-[83px] top-[87px]">test1</button>
-      <button class="relative bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full left-[325px] top-[60px]">test3</button>
-     <img src="/webim/B_grille.png" class="select-none">
-</div>
-<div class="fixed md:-bottom-48 -bottom-52 w-[650px]" >
-    <img src="/webim/ball.png" class="sun select-none">
-</div>
+    <div class="flex justify-center">
+      <div class="fixed md:-bottom-48 -bottom-52 w-[700px] z-10">
+        <button
+          class="relative bg-blue-500 hover:bg-blue-700 text-white  py-2 px-3 rounded-full left-[59%] top-[20px] tooltip"> <i class="fa-solid fa-people-group mt-1"></i><span class="tooltiptext ml-2">Qui somme nous?</span></button>
+        <button
+          class="relative bg-blue-500 hover:bg-blue-700 text-white py-2 px-3 rounded-full left-[165px] top-[26px] tooltip"><i class="fa-solid fa-eye pt-1"></i><span class="tooltiptext ml-2">Notre vision</span></button>
+        <button
+          class="relative bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded-full right-[1px] top-[97px] tooltip"> <i class="fa-solid fa-briefcase pt-1"></i><span class="tooltiptext ml-2">Conception</span></button>
+        <button
+          class="relative bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded-full left-[375px] top-[74px] tooltip"> <i class="fa-solid fa-user-tie pt-1"></i><span class="tooltiptext ml-2">Espace pro</span> </button>
+        <img src="/webim/B_grille.png" class="select-none">
+      </div>
+      <div class="fixed md:-bottom-48 -bottom-52 w-[650px]">
+        <img src="/webim/ball.png" class="sun select-none">
+      </div>
+    </div>
+
+    <footer class="fixed bottom-0 z-50 w-full py-4 px-8 bg-[#121929]">
+      <div class="flex justify-between ">
+        <i class="fa-solid fa-square-phone fa-2x text-white hover:text-gray-400 active:text-gray-300"></i>
+        <div>
+          <i class="fa-brands fa-instagram fa-2x text-white mx-2 hover:text-gray-400 active:text-gray-300"></i>
+          <i class="fa-brands fa-square-facebook fa-2x text-white mx-2 hover:text-gray-400 active:text-gray-300"></i>
+        </div>
+      </div>
+    </footer>
   </div>
-
-  <footer class="fixed bottom-0 z-50 w-full py-4 px-8 bg-[#121929]">
-    <div class="flex justify-between ">
-      <i class="fa-solid fa-square-phone fa-2x text-white hover:text-gray-400 active:text-gray-300"></i>
-      <div>
-      <i class="fa-brands fa-instagram fa-2x text-white mx-2 hover:text-gray-400 active:text-gray-300"></i>
-      <i class="fa-brands fa-square-facebook fa-2x text-white mx-2 hover:text-gray-400 active:text-gray-300"></i>
-    </div>
-    </div>
-  </footer>
-</div>
 </body>
 <script>
 
   const menu = document.querySelector('[x-ref="menu"]');
 
-// Add a click event listener to the document object
-document.addEventListener('click', (event) => {
-  // Check if the click event occurred outside the menu element
-  if (!menu.contains(event.target)) {
-    // If it did, close the menu
-    open = false;
-  }
-});
+  // Add a click event listener to the document object
+  document.addEventListener('click', (event) => {
+    // Check if the click event occurred outside the menu element
+    if (!menu.contains(event.target)) {
+      // If it did, close the menu
+      open = false;
+    }
+  });
 
 </script>
 

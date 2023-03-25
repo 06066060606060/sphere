@@ -1,0 +1,47 @@
+
+body {
+    background-image: url('./webim/bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+  
+   [x-cloak] { 
+        display: none !important;
+     }
+  
+    .sun {
+      /*animation info for different browsers*/
+      -webkit-animation:
+        /*type of animation*/
+        spin
+        /*length of animation*/
+        120s
+        /*same speed from start to end*/
+        linear
+        /*continue forever!*/
+        infinite;
+      -moz-animation: spin 120s linear infinite;
+      animation: spin 120s linear infinite;
+    }
+  
+    @-moz-keyframes spin {
+      100% {
+        -moz-transform: rotate(360deg);
+      }
+    }
+  
+    @-webkit-keyframes spin {
+      100% {
+        -webkit-transform: rotate(360deg);
+      }
+    }
+  
+    @keyframes spin {
+      100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+  
+     /* debut anim titre */
